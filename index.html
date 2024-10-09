@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Web con Menú Desplegable</title>
+    <title>Página Web con Menú Desplegable Horizontal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,6 +27,9 @@
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
+            left: 0; /* Alineado a la izquierda */
+            top: 100%; /* Posicionado debajo del botón */
+            white-space: nowrap; /* Evitar el salto de línea */
         }
         #menu-content a {
             color: black;
