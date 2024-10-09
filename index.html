@@ -3,24 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de la Página</title>
+    <title>Página Web con Buscador y Carrito</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        section {
+        #banner {
+            background-color: #4CAF50; 
+            color: white;
+            text-align: center;
             padding: 20px;
+        }
+        section {
+            padding: 10px; /* Secciones más pequeñas */
             border: 1px solid #ccc;
             margin: 10px;
+            max-width: 300px; /* Ancho máximo de las secciones */
+        }
+        #buscador {
+            margin: 20px;
+            text-align: center;
+        }
+        #carrito {
+            float: right;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div style="background-color: #4CAF50; color: white; text-align: center; padding: 20px;">
+    <div id="banner">
         <h1>Bienvenido a Mi Página Web</h1>
+        <div id="carrito">
+            <button>🛒 Carrito</button>
+        </div>
+    </div>
+
+    <div id="buscador">
+        <input type="text" placeholder="Buscar...">
+        <button>🔍</button>
     </div>
 
     <section>
