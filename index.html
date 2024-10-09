@@ -16,32 +16,40 @@
             text-align: center;
             padding: 20px;
         }
-        #menu {
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
             position: relative;
-            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
         }
         #menu-content {
             display: none;
             position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            background-color: #333;
             z-index: 1;
-            left: 0; /* Alineado a la izquierda */
-            top: 100%; /* Posicionado debajo del botón */
-            white-space: nowrap; /* Evitar el salto de línea */
+            min-width: 160px;
+            white-space: nowrap;
+        }
+        nav a:hover #menu-content {
+            display: block;
         }
         #menu-content a {
-            color: black;
+            color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
         #menu-content a:hover {
-            background-color: #ddd;
-        }
-        #menu:hover #menu-content {
-            display: block;
+            background-color: #575757;
         }
         section {
             padding: 10px;
@@ -49,44 +57,25 @@
             margin: 10px;
             max-width: 300px;
         }
-        #buscador {
-            margin: 20px;
-            text-align: center;
-        }
-        #carrito {
-            float: right;
-            margin: 20px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 200px;
-        }
-        button {
-            padding: 10px;
-        }
     </style>
 </head>
 <body>
 
     <div id="banner">
         <h1>Bienvenido a Mi Página Web</h1>
-        <div id="menu">
-            <button>Menú</button>
-            <div id="menu-content">
-                <a href="#seccion1">Sección 1</a>
-                <a href="#seccion2">Sección 2</a>
-                <a href="#seccion3">Sección 3</a>
-            </div>
-        </div>
-        <div id="carrito">
-            <button>🛒 Carrito</button>
-        </div>
     </div>
 
-    <div id="buscador">
-        <input type="text" placeholder="Buscar...">
-        <button>🔍</button>
-    </div>
+    <nav>
+        <a href="#seccion1">Sección 1</a>
+        <a href="#seccion2">Sección 2</a>
+        <a href="#seccion3">Sección 3</a>
+        <a href="#">Más
+            <div id="menu-content">
+                <a href="#seccion4">Sección 4</a>
+                <a href="#seccion5">Sección 5</a>
+            </div>
+        </a>
+    </nav>
 
     <section id="seccion1">
         <h2>Sección 1</h2>
@@ -101,6 +90,16 @@
     <section id="seccion3">
         <h2>Sección 3</h2>
         <p>Contenido de la tercera sección.</p>
+    </section>
+
+    <section id="seccion4">
+        <h2>Sección 4</h2>
+        <p>Contenido de la cuarta sección.</p>
+    </section>
+
+    <section id="seccion5">
+        <h2>Sección 5</h2>
+        <p>Contenido de la quinta sección.</p>
     </section>
 
 </body>
