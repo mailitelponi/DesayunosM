@@ -3,98 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Web con Menú Vertical Desplegable</title>
+    <title>Menú Vertical Desplegable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --main-color: #fff;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+
+        .main-header {
+            background: #4FB391;
+            width: 100%;
+            height: 50px;
             display: flex;
+            align-items: center;
+            padding-left: 10px;
         }
-        #sidebar {
+
+        nav {
+            position: absolute;
+            left: 0;
+            top: 0;
             width: 200px;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            top: 50px;
+            height: calc(100vh - 50px);
+            background: #2D6653;
+            transform: translateX(-100%);
+            transition: .4s ease;
         }
-        #sidebar a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            position: relative;
-        }
-        #sidebar a:hover {
-            background-color: #575757;
-        }
-        #menu-content {
-            display: none;
-            background-color: #444;
-            padding: 0;
-            margin: 0;
+
+        .navigation li {
             list-style: none;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, .5);
         }
-        #menu-content a {
-            padding: 10px 15px;
-            font-size: 0.9em;
-        }
-        .dropdown:hover #menu-content {
+
+        .navigation a {
+            color: var(--main-color);
             display: block;
+            line-height: 3.5;
+            padding: 0 10px;
+            text-decoration: none;
+            transition: .4s ease;
         }
-        main {
-            flex-grow: 1;
-            padding: 20px;
+
+        .navigation a:hover {
+            transform: translateX(10%);
         }
-        section {
-            padding: 10px;
-            border: 1px solid #ccc;
-            margin: 10px 0;
+
+        #btn-nav {
+            display: none;
+        }
+
+        #btn-nav:checked ~ nav {
+            transform: translateX(0);
+        }
+
+        .btn-nav {
+            color: var(--main-color);
+            font-size: 30px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            padding: 6.5px 15px;
+            transition: .2s ease;
+            background: rgba(0, 0, 0, .1);
+        }
+
+        .btn-nav:hover {
+            background: rgba(0, 0, 0, .3);
+        }
+
+        /* Para el botón de menú en dispositivos móviles */
+        @media (max-width: 600px) {
+            .btn-nav {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div id="sidebar">
-        <h2>Menú</h2>
-        <a href="#seccion1">Sección 1</a>
-        <a href="#seccion2">Sección 2</a>
-        <a href="#seccion3">Sección 3</a>
-        <div class="dropdown">
-            <a href="#">Más</a>
-            <div id="menu-content">
-                <a href="#seccion4">Sección 4</a>
-                <a href="#seccion5">Sección 5</a>
-            </div>
-        </div>
+    <input type="checkbox" id="btn-nav">
+    <label for="btn-nav" class="btn-nav">☰</label>
+
+    <div class="main-header">
+        <h1>Mi Página Web</h1>
     </div>
 
+    <nav>
+        <ul class="navigation">
+            <li><a href="#seccion1">Sección 1</a></li>
+            <li><a href="#seccion2">Sección 2</a></li>
+            <li><a href="#seccion3">Sección 3</a></li>
+            <li><a href="#seccion4">Sección 4</a></li>
+            <li><a href="#seccion5">Sección 5</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section id="seccion1">
-            <h2>Sección 1</h2>
-            <p>Contenido de la primera sección.</p>
-        </section>
-
-        <section id="seccion2">
-            <h2>Sección 2</h2>
-            <p>Contenido de la segunda sección.</p>
-        </section>
-
-        <section id="seccion3">
-            <h2>Sección 3</h2>
-            <p>Contenido de la tercera sección.</p>
-        </section>
-
-        <section id="seccion4">
-            <h2>Sección 4</h2>
-            <p>Contenido de la cuarta sección.</p>
-        </section>
-
-        <section id="seccion5">
-            <h2>Sección 5</h2>
-            <p>Contenido de la quinta sección.</p>
-        </section>
+        <section id="seccion1"><h2>Sección 1</h2><p>Contenido de la sección 1.</p></section>
+        <section id="seccion2"><h2>Sección 2</h2><p>Contenido de la sección 2.</p></section>
+        <section id="seccion3"><h2>Sección 3</h2><p>Contenido de la sección 3.</p></section>
+        <section id="seccion4"><h2>Sección 4</h2><p>Contenido de la sección 4.</p></section>
+        <section id="seccion5"><h2>Sección 5</h2><p>Contenido de la sección 5.</p></section>
     </main>
 
 </body>
 </html>
+
