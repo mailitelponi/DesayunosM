@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Web con Buscador y Carrito</title>
+    <title>Página Web con Menú Desplegable</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,11 +16,35 @@
             text-align: center;
             padding: 20px;
         }
+        #menu {
+            position: relative;
+            display: inline-block;
+        }
+        #menu-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        #menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        #menu-content a:hover {
+            background-color: #ddd;
+        }
+        #menu:hover #menu-content {
+            display: block;
+        }
         section {
-            padding: 10px; /* Secciones más pequeñas */
+            padding: 10px;
             border: 1px solid #ccc;
             margin: 10px;
-            max-width: 300px; /* Ancho máximo de las secciones */
+            max-width: 300px;
         }
         #buscador {
             margin: 20px;
@@ -43,6 +67,14 @@
 
     <div id="banner">
         <h1>Bienvenido a Mi Página Web</h1>
+        <div id="menu">
+            <button>Menú</button>
+            <div id="menu-content">
+                <a href="#seccion1">Sección 1</a>
+                <a href="#seccion2">Sección 2</a>
+                <a href="#seccion3">Sección 3</a>
+            </div>
+        </div>
         <div id="carrito">
             <button>🛒 Carrito</button>
         </div>
@@ -53,20 +85,21 @@
         <button>🔍</button>
     </div>
 
-    <section>
+    <section id="seccion1">
         <h2>Sección 1</h2>
         <p>Contenido de la primera sección.</p>
     </section>
 
-    <section>
+    <section id="seccion2">
         <h2>Sección 2</h2>
         <p>Contenido de la segunda sección.</p>
     </section>
 
-    <section>
+    <section id="seccion3">
         <h2>Sección 3</h2>
         <p>Contenido de la tercera sección.</p>
     </section>
 
 </body>
 </html>
+
